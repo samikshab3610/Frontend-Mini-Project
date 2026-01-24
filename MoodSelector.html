@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Selector</title>
+    <style>
+        :root{
+            --main-color: beige;
+
+            --happy-color: yellow;
+            --happy-bg-color: #fafa5a;
+
+            --calm-color: blue;
+            --calm-bg-color:#7878fa;
+
+            --danger-color: red;
+            --danger-bg-color:#fa5050;
+
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .moods{
+            border: 2px solid black;
+            border-radius: 1.8rem;
+            margin: 1.8rem;
+            padding: 1.8rem;
+            text-align: center;
+            background-color: var(--main-color);
+        }
+
+        .moodsection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mymood{
+            margin: 15px;
+            padding: 15px;
+            border: 2px solid black;
+            font-size: large;
+        }
+
+        #happy{
+            background-color: var(--happy-color);
+        }
+
+        #calm{
+            background-color: var(--calm-color);
+        }
+
+        #danger{
+            background-color: var(--danger-color);
+        }
+    </style>
+</head>
+<body>
+    <h1>Mood Selector</h1>
+    <div class="moods">
+        <h2>How's Your Mood? </h2>
+        <div class="moodsection">
+        <button class="mymood" id="happy">😊 Happy</button>
+        <button class="mymood" id="calm">😌 Calm</button>
+        <button class="mymood" id="danger">⚠️ Danger</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let happy = document.getElementById('happy');
+    let calm = document.getElementById('calm');
+    let danger = document.getElementById('danger');
+    let moodsectionoutline = document.querySelector('.moods');
+    let root = document.documentElement; 
+
+    
+    function setTheme(theme) {
+        let bgcolor = getComputedStyle(root).getPropertyValue(`--${theme}-bg-color`);
+
+        moodsectionoutline.style.backgroundColor = bgcolor;
+    }
+
+    happy.addEventListener('click', () => setTheme('happy'));
+    calm.addEventListener('click', () => setTheme('calm'));
+    danger.addEventListener('click', () => setTheme('danger'));
+
+</script>
+</html>

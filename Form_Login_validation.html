@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <h1>Form validation</h1>
+
+    <form action="" id="myform">
+        <label for="name">Name: </label>
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <p id="NameError"></p>
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="Enter Your Email">
+        <p id="EmailError"></p>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" placeholder="Enter Valid Password">
+        <p id="PasswordError"></p>
+
+        <label for="gender">Gender: </label>
+        <input type="radio" name="gender" id="male">
+        <label for="male>Male</label>
+
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label>
+        <p id="GenderError"></p>
+
+        <label for="country">Country: </label>
+        <select id="Country">
+            <option value="">--Select Country --</option>
+            <option value="India">India</option>
+            <option value="America">America</option>
+            <option value="Srilanka">Srilanka</option>
+            <option value="France">France</option>
+            <option value="Singapore">Singapore</option>
+        </select>
+        <p id="CountryError"></p>
+
+        <label for="tel">Mobile: </label>
+        <input type="number" id="telephone" placeholder="Enter Mobile No">
+        <p id="telephoneError"></p>
+
+        <Button type="submit">Submit</Button>
+
+    </form>
+</body>
+
+<script>
+
+    let form = document.getElementById('myform');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert("Sumbit Clicked");
+
+        document.querySelectorAll('p').forEach(p => p.innerText = '');
+        
+        let name = document.getElementById('name');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let gender = document.querySelector('input[name="gender"]:checked');
+        let country = document.getElementById('Country');
+        let telephone = document.getElementById('telephone');
+
+
+        // Name 
+        if (name.value.trim() === "") {
+            NameError.innerText = "Name is required";
+            return;
+        }
+
+        // Email
+        const emailvalue = email.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailvalue === '') {
+            EmailError.innerText = 'Email is required';
+        }
+        if (!emailPattern.test(emailvalue)) {
+            EmailError.innerText = 'Invalid Email';
+            return;
+        }
+
+        // Password
+        let PasswordError = document.getElementById('PasswordError');
+        const passwordvalue = password.value.trim();
+
+        if (passwordvalue === '') {
+            PasswordError.innerText = "Password is required";
+        }
+        if (passwordvalue.length <6) {
+            PasswordError.innerText = "Password 6 atleast must contain 1 uppercase, 1 lowercase, a special character , 1 number";
+        }
+        if (!/[A-Z]/.test(passwordvalue) || !/[a-z]/.test(passwordvalue) || !/[0-9]/.test(passwordvalue) || !/[^a-zA-Z0-9]/.test(passwordvalue)) {
+            PasswordError.innerText = 
+            'Password 6 atleast must contain 1 uppercase, 1 lowercase, a special character , 1 number';
+            return;
+        }
+
+        // Gender
+        if (!gender) {
+            GenderError.innerText = 'Required Field';
+            return;
+        }
+
+        //Country
+        let CountryError = document.getElementById('CountryError');
+        if (country.value === '') {
+            CountryError.innerText = 'Please select a country';
+            return;
+        }
+
+        // mobile
+        let telephoneError = document.getElementById('telephoneError');
+        const telephonevalue = telephone.value.trim();
+        const mobilepattern = /^[0-9]{10}$/;
+
+        if (telephonevalue === '') {
+            telephoneError.innerText = 'Required Field';
+            return;
+        }
+        if (!mobilepattern.test(telephonevalue)) {
+            telephoneError.innerText = 'Enter Valid Mobile Number';
+            return;
+        }
+
+        alert("Form Submitted SuccessFully");
+        return true;
+        form.submit();
+        
+    });
+</script>
+
+</html>

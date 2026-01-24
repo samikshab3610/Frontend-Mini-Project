@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transperant Login</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            color: white;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("rabbit2.jpg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0;
+            background-color: rgb(78, 116, 78);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .outer {
+            background-color: rgba(5, 240, 5, 0.288);
+            width: 500px;
+            height: 300px;
+            border: 2px solid rgb(36, 128, 36);
+            border-radius: 20px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            font-size: 3rem;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .email {
+            margin: 10px;
+            padding: 5px;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .password {
+            margin: 10px;
+            padding: 5px;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input::placeholder {
+            color: rgb(32, 32, 32);
+        }
+
+        input {
+            border: 1px solid black;
+            border-radius: 15px;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .btn {
+            border: 2px solid rgb(31, 70, 20);
+            border-radius: 15px;
+            margin: 5px;
+            padding: 5px;
+            width: 80px;
+            background-color: rgb(3, 255, 3);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn.grow{
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+
+        <h1>Login</h1>
+        <div class="form">
+
+            <div class="email">
+                <label for="email">Email: </label>
+                <input type="text" placeholder="Enter Email">
+            </div>
+
+            <div class="password">
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+            </div>
+
+            <button class="btn">Login</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let btn = document.querySelector('.btn');
+    btn.addEventListener('click', () => {
+        btn.classList.add('grow');
+
+        setTimeout(() => {
+            btn.classList.remove('grow');
+        }, 200);
+    });
+</script>
+
+</html>
