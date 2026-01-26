@@ -1,89 +1,89 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Times New Roman', Times, serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #f4f6f8;
-        }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f6f8;
+}
 
-        .mytodolist {
-            border: 2px solid black;
-            border-radius: 15px;
-            width: 500px;
-            height: 400px;
-            text-align: center;
-            padding: 10px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-        }
+.mytodolist {
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
 
-        h1 {
-            margin: 5px;
-            padding: 5px;
-            text-align: center;
-            margin-bottom: 15px;
-        }
+h1 {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-        .input-box {
-            background-color: #a5a5e6;
-            margin: 10px;
-            padding: 10px;
-            border: 2px solid black;
-            border-radius: 15px;
-            display: flex;
-            gap: 10px;
-            border: 2px solid rgb(62, 62, 63)
-        }
+.input-box {
+    background-color: #a5a5e6;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    gap: 10px;
+    border: 2px solid rgb(62, 62, 63)
+}
 
-        .input-box input {
-            flex: 1;
-            padding: 8px;
-            border-radius: 15px;
-        }
+.input-box input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 15px;
+}
 
-        .input-box button {
-            padding: 8px 15px;
-            cursor: pointer;
-            background: #fcfcfd;
-            color: grey;
-            border: none;
-            border-radius: 15px;
-            border: 2px solid rgb(62, 62, 63)
-        }
+.input-box button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #fcfcfd;
+    color: grey;
+    border: none;
+    border-radius: 15px;
+    border: 2px solid rgb(62, 62, 63)
+}
 
-        ul {
-            list-style: none;
-            margin-top: 15px;
-        }
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
 
-        li {
-            background: #dddcee;
-            padding: 10px;
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-        }
+li {
+    background: #dddcee;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
 
-        li.completed {
-            text-decoration: line-through;
-            color: gray;
-        }
+li.completed {
+    text-decoration: line-through;
+    color: gray;
+}
 
-        li button {
-            background: red;
-            color: white;
-            border: none;
-            padding: 4px 8px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+li button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
